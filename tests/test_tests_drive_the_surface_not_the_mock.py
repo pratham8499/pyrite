@@ -138,6 +138,7 @@ ALLOWLIST: dict[str, str] = {
     "tests/test_doc_write_as_patch.py": "patches a class held in a variable (cls.emit); unresolved",
     "tests/test_embedding_prewarm.py": "patches _get_model on a local service instance behind the REST client; unresolved",
     "tests/test_ephemeral_kb_name_is_not_a_path.py": "patches execute_sql on a local service db; unresolved",
+    "tests/test_get_reads_the_file.py": "spies on os/glob/Path directory-walk functions to count walks (a filesystem process edge; the owners come from a loop, unresolved)",
     "tests/test_index_worker.py": "patches IndexManager behind the REST client",
     "tests/test_link_asymmetric.py": "patches close on a fixture-held db; unresolved",
     "tests/test_mcp_finders.py": "patches a method named by a variable; unresolved",
@@ -146,7 +147,7 @@ ALLOWLIST: dict[str, str] = {
     "tests/test_repo_error_disclosure.py": "unit tests of GitService's error text patch GitService in a file whose other classes drive REST via make_client; split the file (Q8) or migrate",
     "tests/test_shipped_schemas_accept_workflows.py": "patch target built with an f-string; unresolved",
 }
-ALLOWLIST_SIZE_AT_LANDING = 52
+ALLOWLIST_SIZE_AT_LANDING = 53
 
 
 def _is_service_path(dotted: str) -> bool:
